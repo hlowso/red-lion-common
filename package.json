@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "name": "common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "typescript": "^5.1.3"
+  }
+}
