@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "tsc -b"
+    "build": "npx tsc --declaration",
+    "dev": "npx tsc --declaration --watch"
   },
   "name": "common",
   "version": "1.0.0",

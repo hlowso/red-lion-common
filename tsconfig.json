@@ -1,13 +1,17 @@
 {
-    "include": [
-      "**/*.ts"
-    ],
-    "exclude": [
-      "node_modules"
-    ],
-    "target": "es2017",
+  "compilerOptions": {
+    "target": "ES2016",
+    "outDir": "./",
     "module": "commonjs",
-    "lib": [
-      "es2017"
-    ]
-  }
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "./*.ts",
+    "node_modules"
+  ],
+  "lib": [
+    "es2017"
+  ]
+}
