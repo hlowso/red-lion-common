@@ -1,5 +1,6 @@
 import { ActivityRow } from "./db"
 
 export interface Activity extends ActivityRow {
-    listName: string,
+    listName: string;
+    countToday?: number;
 }
