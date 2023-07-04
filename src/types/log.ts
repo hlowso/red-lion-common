@@ -7,6 +7,7 @@ export interface Log {
     gameId: number,
     verb: LogVerb,
     loggedAt: Date,
+    eventDate: Date,
     subjectType: SubjectType,
     subjectId: number,
     objectType: ObjectType,
