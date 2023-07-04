@@ -26,3 +26,15 @@ export interface ActivityRow {
     fields?: any,
     completionDelta, any
 }
+
+export interface CharacterLogSubjectRow {
+    id: number;
+    characterId: number;
+    logId: number;
+}
+
+export interface ActivityLogObjectRow {
+    id: number;
+    activityId: number;
+    logId: number;
+}
