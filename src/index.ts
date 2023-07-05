@@ -4,5 +4,6 @@ export * from "./types/activity";
 export * from "./types/log";
 export * from "./types/delta";
 export * from "./types/formula";
+export * from "./types/web-socket-payloads";
 export * from "./constants";
 export * from "./util";
