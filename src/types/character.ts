@@ -9,3 +9,9 @@ export interface Character {
     subscriptions: any,
     states: any
 }
+
+export interface CharacterGetParams {
+    id?: number;
+    userId?: number;
+    gameId?: number;
+}

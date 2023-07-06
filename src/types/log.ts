@@ -14,3 +14,14 @@ export interface Log {
     objectId: number
     details: any
 }
+
+export interface LogGetParams {
+    id?: number;
+    gameId?: number;
+    verb?: LogVerb;
+    subjectType?: SubjectType;
+    subjectId?: number;
+    objectType?: ObjectType;
+    objectId?: number;
+    since?: Date;
+}
