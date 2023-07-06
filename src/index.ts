@@ -1,4 +1,5 @@
 export * from "./types/db";
+export * from "./types/game";
 export * from "./types/character";
 export * from "./types/activity";
 export * from "./types/log";
