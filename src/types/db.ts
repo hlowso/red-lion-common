@@ -23,13 +23,6 @@ export interface CharacterRow {
     states: any;
 }
 
-export interface ListRow {
-    id: number;
-    gameId: number;
-    name: string;
-    description: string;
-}
-
 export interface ActivityRow {
     id: number;
     listId: number;
