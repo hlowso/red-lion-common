@@ -15,3 +15,8 @@ export interface CharacterGetParams {
     userId?: number;
     gameId?: number;
 }
+
+export interface GetCharacterActivityCountTodayParams {
+    characterId: number;
+    activityId: number;
+}
