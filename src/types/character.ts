@@ -1,9 +1,11 @@
+import { Items } from "./item";
+
 export interface Character {
     id: number;
     gameId: number,
     userId: number,
     imageUrl: string,
-    items: any,
+    items: Items,
     tallies: any,
     progressions: any,
     subscriptions: any,
