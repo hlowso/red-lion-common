@@ -5,6 +5,7 @@ export * from "./types/list";
 export * from "./types/activity";
 export * from "./types/log";
 export * from "./types/tally";
+export * from "./types/item";
 export * from "./types/delta";
 export * from "./types/formula";
 export * from "./types/web-socket-payloads";
