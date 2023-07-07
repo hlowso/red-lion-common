@@ -1,4 +1,5 @@
 /types/
 /selectors/
+/util/
 /*.js
 /*.d.ts
