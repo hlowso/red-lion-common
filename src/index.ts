@@ -10,6 +10,6 @@ export * from "./types/delta";
 export * from "./types/formula";
 export * from "./types/web-socket-payloads";
 export * from "./constants";
-export * from "./util";
+export * as Util from "./util";
 
 export * as Selectors from "./selectors";
