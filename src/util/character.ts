@@ -7,7 +7,7 @@ export const canAffordItem = (
   quantity: number
 ) => {
   // Check tallies
-  return !Object.entries(costDelta.tallies).some(([key, change]) => {
+  return !Object.entries(costDelta.tallies || {}).some(([key, change]) => {
     if (possessions.tallies[key] === undefined) return true;
 
     if (typeof change === "number" && change < 0)
