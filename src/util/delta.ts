@@ -1,6 +1,11 @@
 import { Tallies } from "../types/tally";
 import { Items } from "../types/item";
-import { Delta } from "../types/delta";
+import {
+  Delta,
+  ProgressionChanges,
+  StateChanges,
+  SubscriptionChanges,
+} from "../types/delta";
 
 // TODO: It will probably be necessary to move these to backend
 // when you're handling formula cases
@@ -20,7 +25,16 @@ export const applyFactorToTallies = (factor: number, tallies: Tallies) =>
 export const applyFactorToItems = (factor: number, items: Items) =>
   Object.entries(items).reduce(reducer(factor), {});
 
-export const applyFactorToDelta = (factor: number, delta: Delta): Delta => ({
+export const applyFactorToDelta = (
+  factor: number,
+  delta: Delta
+): {
+  progressions?: ProgressionChanges;
+  subscriptions?: SubscriptionChanges;
+  states?: StateChanges;
+  tallies: Tallies;
+  items: Items;
+} => ({
   ...delta,
   tallies: applyFactorToTallies(factor, (delta.tallies as Tallies) || {}),
   items: applyFactorToItems(factor, (delta.items as Items) || {}),
