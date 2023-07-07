@@ -1,4 +1,4 @@
-export type LogVerb = "completed" | "purchased";
+export type LogVerb = "completed" | "purchased" | "used";
 export type SubjectType = "character";
 export type ObjectType = "activity" | "item";
 
