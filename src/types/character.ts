@@ -22,9 +22,18 @@ export interface CharacterGetParams {
   gameId?: number;
 }
 
-export interface GetCharacterActivityCountTodayParams {
+export interface CharacterActivityRequestParams {
   characterId: number;
   activityId: number;
+}
+
+export interface CharacterItemRequestParams {
+  characterId: number;
+  itemId: number;
+}
+
+export interface PurchaseItemAsCharacterRequestBody {
+  quantity: number;
 }
 
 export interface Possessions {
