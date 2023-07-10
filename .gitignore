@@ -3,3 +3,4 @@
 /util/
 /*.js
 /*.d.ts
+/node_modules/
