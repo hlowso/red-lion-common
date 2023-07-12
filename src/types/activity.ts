@@ -1,13 +1,17 @@
-import { ActivityRow } from "./db"
+import { Delta } from "./delta";
 
-export interface Activity extends ActivityRow {
-    listName: string;
-    countToday?: number;
+export interface ActivityRow {
+  id: number;
+  listId: number;
+  name: string;
+  description?: string;
+  schedule?: string;
+  count?: number;
+  fields?: any;
+  completionDelta: Delta;
 }
 
-export interface ActivityGetParams {
-    id?: number;
-    gameId?: number;
-    listId?: number;
-    characterId?: number;
+export interface Activity extends ActivityRow {
+  listName: string;
+  countToday?: number;
 }

@@ -23,17 +23,6 @@ export interface CharacterRow {
   states: any;
 }
 
-export interface ActivityRow {
-  id: number;
-  listId: number;
-  name: string;
-  description?: string;
-  schedule?: string;
-  count?: number;
-  fields?: any;
-  completionDelta: Delta;
-}
-
 export interface CharacterLogSubjectRow {
   id: number;
   characterId: number;
