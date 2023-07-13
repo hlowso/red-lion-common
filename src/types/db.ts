@@ -1,5 +1,3 @@
-import { Delta } from "./delta";
-
 export interface UserRow {
   id: number;
   username: string;
@@ -9,18 +7,6 @@ export interface UserRow {
 export interface GameRow {
   id: number;
   name: string;
-}
-
-export interface CharacterRow {
-  id: number;
-  gameId: number;
-  userId: number;
-  imageId: number;
-  items: any;
-  tallies: any;
-  progressions: any;
-  subscriptions: any;
-  states: any;
 }
 
 export interface CharacterLogSubjectRow {
