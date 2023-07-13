@@ -1,6 +1,7 @@
 export * from "./db";
 export * from "./game";
 export * from "./character";
+export * from "./character-request";
 export * from "./list";
 export * from "./activity";
 export * from "./activity-request";

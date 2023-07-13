@@ -10,30 +10,10 @@ export interface Character {
   userId: number;
   imageUrl: string;
   items: Items;
-  tallies: any;
+  tallies: Tallies;
   progressions: any;
   subscriptions: any;
   states: any;
-}
-
-export interface CharacterGetParams {
-  id?: number;
-  userId?: number;
-  gameId?: number;
-}
-
-export interface CharacterActivityRequestParams {
-  characterId: number;
-  activityId: number;
-}
-
-export interface CharacterItemRequestParams {
-  characterId: number;
-  itemId: number;
-}
-
-export interface PurchaseItemAsCharacterRequestBody {
-  quantity: number;
 }
 
 export interface Possessions {

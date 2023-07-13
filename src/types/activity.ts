@@ -1,5 +1,17 @@
 import { Delta } from "./delta";
 
+export interface ActivityFieldOption {
+  value: number;
+  name: string;
+}
+
+export interface ActivityField {
+  kind: "radio";
+  key: string;
+  description: string;
+  options?: ActivityFieldOption[];
+}
+
 export interface ActivityRow {
   id: number;
   listId: number;
@@ -7,7 +19,7 @@ export interface ActivityRow {
   description?: string;
   schedule?: string;
   count?: number;
-  fields?: any;
+  fields?: ActivityField[];
   completionDelta: Delta;
 }
 

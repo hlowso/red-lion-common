@@ -1,4 +1,5 @@
-import { ActivityRow } from "./activity";
+import { ActivityRow, ActivityField } from "./activity";
+import { FormulaContextValue } from "./formula";
 
 export interface ActivityGetParams {
   id?: number;
@@ -10,9 +11,11 @@ export interface ActivityGetParams {
 export interface ActivityPostParams extends Required<Omit<ActivityRow, "id">> {
   schedule: string | null;
   count: number | null;
-  fields: any | null;
+  fields: ActivityField[] | null;
+  fieldValues: FormulaContextValue[] | null;
   logCompletionOnCreate?: {
     subjectId: number;
     subjectType: "character";
+    fieldValues?: FormulaContextValue[];
   };
 }
