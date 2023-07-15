@@ -9,6 +9,7 @@ export * from "./log";
 export * from "./tally";
 export * from "./item";
 export * from "./subscription";
+export * from "./character-tally-target";
 export * from "./delta";
 export * from "./formula";
 export * from "./web-socket-payloads";

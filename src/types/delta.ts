@@ -27,3 +27,12 @@ export interface Delta {
   subscriptions?: SubscriptionChanges;
   states?: StateChanges;
 }
+
+export interface EvaluatedDelta extends Delta {
+  tallies?: {
+    [tallyKey: string]: number;
+  };
+  items?: {
+    [itemKey: string]: number;
+  };
+}
