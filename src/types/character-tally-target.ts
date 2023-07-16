@@ -6,7 +6,16 @@ export interface CharacterTallyTargetRow {
   value: number;
 }
 
+export interface CharacterTallyTargetWithKey extends CharacterTallyTargetRow {
+  tallyKey: string;
+}
+
 export interface CharacterTallyTarget extends CharacterTallyTargetRow {
-  tallyKey?: string;
   currentValue?: number;
+}
+
+export interface TallyTargetLogObjectRow {
+  id: number;
+  characterTallyTargetId: number;
+  logId: number;
 }

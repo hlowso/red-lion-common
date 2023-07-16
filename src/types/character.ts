@@ -22,3 +22,9 @@ export interface CharacterRow extends Possessions {
 export interface Character extends CharacterRow {
   imageUrl: string;
 }
+
+export interface CharacterLogSubjectRow {
+  id: number;
+  characterId: number;
+  logId: number;
+}

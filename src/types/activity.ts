@@ -27,3 +27,9 @@ export interface Activity extends ActivityRow {
   listName: string;
   countToday?: number;
 }
+
+export interface ActivityLogObjectRow {
+  id: number;
+  activityId: number;
+  logId: number;
+}

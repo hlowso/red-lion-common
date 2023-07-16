@@ -1,6 +1,6 @@
-export type LogVerb = "completed" | "purchased" | "used";
+export type LogVerb = "completed" | "purchased" | "used" | "targeted";
 export type SubjectType = "character";
-export type ObjectType = "activity" | "item";
+export type ObjectType = "activity" | "item" | "tally-target";
 
 export interface LogRow {
   id: number;
