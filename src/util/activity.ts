@@ -1,7 +1,10 @@
-import { ListRow, ActivityRow } from "../types";
-import { unplannedList } from "./list";
+import { ActivityRow } from "../types";
+import { WEEKDAYS } from "../constants";
+import { isToday } from "./date";
 
-export const unplannedActivites = (
-  lists: ListRow[],
-  activities: ActivityRow[]
-) => activities.filter((a) => a.listId === unplannedList(lists)?.id);
+export const dueToday = (activity?: ActivityRow) =>
+  !!activity?.schedule &&
+  (activity.schedule === "D" ||
+    (activity.schedule!.startsWith("W") &&
+      activity.schedule!.includes(WEEKDAYS[new Date().getDay()])) ||
+    isToday(new Date(activity.schedule)));
