@@ -18,13 +18,13 @@ export interface ActivityRow {
   name: string;
   description?: string;
   schedule?: string;
-  count?: number;
+  count: number;
   fields?: ActivityField[];
   completionDelta: Delta;
 }
 
 export interface Activity extends ActivityRow {
-  listName: string;
+  listName?: string;
   countToday?: number;
 }
 
