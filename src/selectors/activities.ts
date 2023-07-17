@@ -1,5 +1,5 @@
 import { WEEKDAYS } from "../constants";
-import { ActivityRow } from "../types/activity";
+import { Activity, ActivityRow } from "../types/activity";
 
 export const dueToday = (activities: ActivityRow[]) =>
   activities
@@ -10,3 +10,9 @@ export const dueToday = (activities: ActivityRow[]) =>
         (schedule!.startsWith("W") &&
           schedule!.includes(WEEKDAYS[new Date().getDay()]))
     );
+
+export const todayComplete = (activities: Activity[]) =>
+  activities.filter((a) => (a.count || 1) <= (a.countToday || 0));
+
+export const todayIncomplete = (activities: Activity[]) =>
+  activities.filter((a) => (a.count || 1) > (a.countToday || 0));
