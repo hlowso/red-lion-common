@@ -1,17 +1,18 @@
 import { ListRow } from "../types";
 import { Activity, ActivityRow } from "../types/activity";
 import { unplannedList } from "../util/list";
-import { dueToday as activityDueToday } from "../util/activity";
+import {
+  dueToday as activityDueToday,
+  complete as activityComplete,
+} from "../util/activity";
 
 export const dueToday = (activities: ActivityRow[]) =>
   activities.filter(activityDueToday);
 
-export const todayComplete = (activities: Activity[]) =>
-  activities.filter(
-    (a) => a.status?.done || (a.count || 1) <= (a.status?.countToday || 0)
-  );
+export const complete = (activities: Activity[]) =>
+  activities.filter(activityComplete);
 
-export const todayIncomplete = (activities: Activity[]) =>
+export const incomplete = (activities: Activity[]) =>
   activities.filter(
     (a) =>
       a.status?.done === false || (a.count || 1) > (a.status?.countToday || 0)
