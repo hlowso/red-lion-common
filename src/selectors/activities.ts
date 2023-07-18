@@ -7,10 +7,15 @@ export const dueToday = (activities: ActivityRow[]) =>
   activities.filter(activityDueToday);
 
 export const todayComplete = (activities: Activity[]) =>
-  activities.filter((a) => (a.count || 1) <= (a.countToday || 0));
+  activities.filter(
+    (a) => a.status?.done || (a.count || 1) <= (a.status?.countToday || 0)
+  );
 
 export const todayIncomplete = (activities: Activity[]) =>
-  activities.filter((a) => (a.count || 1) > (a.countToday || 0));
+  activities.filter(
+    (a) =>
+      a.status?.done === false || (a.count || 1) > (a.status?.countToday || 0)
+  );
 
 export const unplanned = (lists: ListRow[], activities: ActivityRow[]) =>
   activities.filter((a) => a.listId === unplannedList(lists)?.id);
