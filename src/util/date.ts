@@ -1,11 +1,13 @@
-export const isValid = (d: Date) => d instanceof Date && !isNaN(d.getTime());
-export const isToday = (d: Date) => {
-  const today = new Date();
-  return (
-    isValid(d) &&
-    d.getUTCDate() === today.getUTCDate() &&
-    d.getUTCMonth() === today.getUTCMonth() &&
-    d.getUTCFullYear() === today.getUTCFullYear()
-  );
-};
+export const isValid = (d: Date): d is Date =>
+  d instanceof Date && !isNaN(d.getTime());
+
+export const sameDate = (d1: Date, d2: Date) =>
+  isValid(d1) &&
+  isValid(d2) &&
+  d1.getUTCDate() === d2.getUTCDate() &&
+  d1.getUTCMonth() === d2.getUTCMonth() &&
+  d1.getUTCFullYear() === d2.getUTCFullYear();
+
+export const isToday = (d: Date) => sameDate(d, new Date());
+
 export const dateString = (d: Date) => d.toISOString().split("T")[0];
