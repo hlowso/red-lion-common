@@ -6,7 +6,7 @@ import {
   complete as activityComplete,
 } from "../util/activity";
 
-export const dueToday = (activities: ActivityRow[]) =>
+export const dueToday = (activities: Activity[]) =>
   activities.filter(activityDueToday);
 
 export const complete = (activities: Activity[]) =>
@@ -14,8 +14,7 @@ export const complete = (activities: Activity[]) =>
 
 export const incomplete = (activities: Activity[]) =>
   activities.filter(
-    (a) =>
-      a.status?.done === false || (a.count || 1) > (a.status?.countToday || 0)
+    (a) => !a.status?.done && (a.count || 1) > (a.status?.countToday || 0)
   );
 
 export const unplanned = (lists: ListRow[], activities: ActivityRow[]) =>
