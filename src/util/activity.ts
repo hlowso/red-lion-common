@@ -1,6 +1,10 @@
-import { ActivityRow } from "../types";
+import { Activity, ActivityRow } from "../types";
 import { isToday, sameDate } from "./date";
 import { parseExpression } from "cron-parser";
+
+export const complete = (activity: Activity) =>
+  activity.status?.done ||
+  (activity.count || 1) <= (activity.status?.countToday || 0);
 
 export const dueToday = (activity?: ActivityRow) => {
   if (!activity?.schedule) return false;
