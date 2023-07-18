@@ -23,9 +23,14 @@ export interface ActivityRow {
   completionDelta: Delta;
 }
 
+export interface ActivityStatus {
+  countToday?: number;
+  done?: boolean;
+}
+
 export interface Activity extends ActivityRow {
   listName?: string;
-  countToday?: number;
+  status: ActivityStatus;
 }
 
 export interface ActivityLogObjectRow {
