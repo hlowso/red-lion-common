@@ -1,10 +1,16 @@
 import { ActivityRow } from "../types";
-import { WEEKDAYS } from "../constants";
-import { isToday } from "./date";
+import { isToday, sameDate } from "./date";
+import { parseExpression } from "cron-parser";
 
-export const dueToday = (activity?: ActivityRow) =>
-  !!activity?.schedule &&
-  (activity.schedule === "D" ||
-    (activity.schedule!.startsWith("W") &&
-      activity.schedule!.includes(WEEKDAYS[new Date().getDay()])) ||
-    isToday(new Date(activity.schedule)));
+export const dueToday = (activity?: ActivityRow) => {
+  if (!activity?.schedule) return false;
+
+  try {
+    const interval = parseExpression(activity.schedule);
+    const prev = interval.prev().toDate();
+    const now = new Date();
+    return sameDate(now, prev);
+  } catch (e) {
+    return isToday(new Date(activity.schedule));
+  }
+};
