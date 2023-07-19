@@ -1,6 +1,5 @@
 import { Activity, ActivityRow } from "../types";
-import { isToday, sameDate } from "./date";
-import { parseExpression } from "cron-parser";
+import { isToday, scheduleResetToday } from "./date";
 
 export const complete = (activity: Activity) =>
   activity.status?.done ||
@@ -10,10 +9,7 @@ export const dueToday = (activity?: ActivityRow) => {
   if (!activity?.schedule) return false;
 
   try {
-    const interval = parseExpression(activity.schedule);
-    const prev = interval.prev().toDate();
-    const now = new Date();
-    return sameDate(now, prev);
+    return scheduleResetToday(activity.schedule);
   } catch (e) {
     return isToday(new Date(activity.schedule));
   }
