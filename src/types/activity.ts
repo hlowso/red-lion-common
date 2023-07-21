@@ -26,6 +26,7 @@ export interface ActivityRow {
 export interface ActivityStatus {
   countToday?: number;
   done?: boolean;
+  streak?: number;
 }
 
 export interface Activity extends ActivityRow {
