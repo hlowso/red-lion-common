@@ -33,3 +33,12 @@ export const scheduleResetToday = (schedule: string) => {
 
   return sameDate(now, prev);
 };
+
+export const isCron = (str: string) => {
+  try {
+    parseExpression(str);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
