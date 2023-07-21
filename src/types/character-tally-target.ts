@@ -4,7 +4,7 @@ export interface CharacterTallyTargetRow {
   tallyId: number;
   schedule: string;
   value: number;
-  color: string;
+  color?: string;
 }
 
 export interface CharacterTallyTargetWithKey extends CharacterTallyTargetRow {

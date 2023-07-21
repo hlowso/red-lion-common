@@ -19,3 +19,11 @@ export interface ActivityPostParams extends Required<Omit<ActivityRow, "id">> {
     fieldValues?: FormulaContextValue[];
   };
 }
+
+export interface ActivityPatchParams extends Partial<ActivityRow> {
+  id: number;
+  schedule?: string | null;
+  count?: number | null;
+  fields?: ActivityField[] | null;
+  fieldValues?: FormulaContextValue[] | null;
+}

@@ -1,7 +1,8 @@
 export type VariableKind =
   | "activity:field"
   | "character:tally"
-  | "character:item";
+  | "character:item"
+  | "character:tally-target:value";
 // | "global";
 
 export interface FormulaContextValue {
