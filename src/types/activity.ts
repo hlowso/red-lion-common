@@ -21,6 +21,7 @@ export interface ActivityRow {
   count: number;
   fields?: ActivityField[];
   completionDelta: Delta;
+  abstinenceDelta?: Delta;
 }
 
 export interface ActivityStatus {
@@ -31,6 +32,7 @@ export interface ActivityStatus {
 
 export interface Activity extends ActivityRow {
   listName?: string;
+  gameId?: number;
   status: ActivityStatus;
 }
 
