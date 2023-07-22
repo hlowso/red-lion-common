@@ -6,18 +6,25 @@ import {
   StateChanges,
   SubscriptionChanges,
 } from "../types/delta";
-
-// TODO: It will probably be necessary to move these to backend
-// when you're handling formula cases
+import { Formula } from "../types";
 
 const reducer =
   (factor: number) =>
-  (result: { [key: string]: number }, [key, count]) => ({
-    ...result,
-    [key]: factor * count,
-  });
+  (result: { [key: string]: number | Formula }, [key, change]) => {
+    if (typeof change === "number")
+      return {
+        ...result,
+        [key]: factor * change,
+      };
+    return {
+      ...result,
+      [key]: {
+        expression: `${factor} * (${change.expression})`,
+        variables: change.variables,
+      },
+    };
+  };
 
-// TODO: Handle formula case...
 export const applyFactorToTallies = (factor: number, tallies: Tallies) =>
   Object.entries(tallies).reduce(reducer(factor), {});
 
