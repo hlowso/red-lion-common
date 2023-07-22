@@ -1,6 +1,14 @@
 import { Activity, ActivityRow } from "../types";
 import { isToday, scheduleResetToday } from "./date";
 
+export const bonus = (streak?: number) => {
+  if (typeof streak === "undefined") return 1;
+  if (streak < 7) return 1;
+  if (streak < 14) return 1.25;
+  if (streak < 30) return 1.5;
+  return 1.75;
+};
+
 export const complete = (activity: Activity) =>
   activity.status?.done ||
   (activity.count || 1) <= (activity.status?.countToday || 0);
