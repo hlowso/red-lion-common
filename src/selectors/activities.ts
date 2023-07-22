@@ -18,4 +18,6 @@ export const incomplete = (activities: Activity[]) =>
   );
 
 export const unplanned = (lists: ListRow[], activities: ActivityRow[]) =>
-  activities.filter((a) => a.listId === unplannedList(lists)?.id);
+  activities.filter(
+    (a) => a.listId === unplannedList(lists)?.id || !!a.abstinenceDelta
+  );
