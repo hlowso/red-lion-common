@@ -35,6 +35,7 @@ export const scheduleResetToday = (schedule: string) => {
 };
 
 export const isCron = (str: string) => {
+  if (!str) return false;
   try {
     parseExpression(str);
     return true;
