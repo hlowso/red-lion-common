@@ -14,12 +14,12 @@ const reducer =
     if (typeof change === "number")
       return {
         ...result,
-        [key]: factor * change,
+        [key]: Math.round(factor * change),
       };
     return {
       ...result,
       [key]: {
-        expression: `${factor} * (${change.expression})`,
+        expression: `round(${factor} * (${change.expression}))`,
         variables: change.variables,
       },
     };
