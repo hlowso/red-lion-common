@@ -1,4 +1,4 @@
-export * from "./db";
+export * from "./user";
 export * from "./game";
 export * from "./character";
 export * from "./character-request";
