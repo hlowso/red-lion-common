@@ -19,7 +19,7 @@ describe("applyFactorToDelta", () => {
       items: {},
       tallies: {
         gold: {
-          expression: "3 * (a + 2 * b - 10 * c)",
+          expression: "round(3 * (a + 2 * b - 10 * c))",
           variables: [
             { letter: "a", kind: "activity:field", key: "foo" },
             { letter: "b", kind: "activity:field", key: "bar" },
