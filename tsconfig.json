@@ -2,16 +2,9 @@
   "compilerOptions": {
     "target": "ES2016",
     "outDir": "./",
-    "module": "commonjs",
+    "module": "commonjs"
   },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "./*.ts",
-    "node_modules"
-  ],
-  "lib": [
-    "es2017"
-  ]
+  "include": ["src/**/*.ts"],
+  "exclude": ["./*.ts", "./**/*.test.ts", "node_modules"],
+  "lib": ["es2017"]
 }
