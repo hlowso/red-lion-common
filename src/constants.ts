@@ -5,3 +5,4 @@ export const SOCKET_EVENTS = {
   NOTIFY: "notify",
   REFRESH: "refresh",
 };
+export const SOCKET_HEADER = "X-Socket-Id";
