@@ -21,3 +21,6 @@ export const unplanned = (lists: ListRow[], activities: ActivityRow[]) =>
   activities.filter(
     (a) => a.listId === unplannedList(lists)?.id || !!a.abstinenceDelta
   );
+
+export const inList = (listId: number, activities: Activity[]) =>
+  activities.filter((a) => a.listId === listId);
