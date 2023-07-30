@@ -33,6 +33,7 @@ export interface ActivityStatus {
 export interface Activity extends ActivityRow {
   listName?: string;
   gameId?: number;
+  goalIds?: number[];
   status: ActivityStatus;
 }
 

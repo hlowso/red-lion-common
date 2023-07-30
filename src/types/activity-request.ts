@@ -18,12 +18,13 @@ export interface ActivityPostParams extends Required<Omit<ActivityRow, "id">> {
     subjectType: "character";
     fieldValues?: FormulaContextValue[];
   };
+  goalIds?: number[] | null;
 }
 
 export interface ActivityPatchParams extends Partial<ActivityRow> {
-  id: number;
   schedule?: string | null;
   count?: number | null;
   fields?: ActivityField[] | null;
   fieldValues?: FormulaContextValue[] | null;
+  goalIds?: number[] | null;
 }

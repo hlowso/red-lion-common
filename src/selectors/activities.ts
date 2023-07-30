@@ -24,3 +24,6 @@ export const unplanned = (lists: ListRow[], activities: ActivityRow[]) =>
 
 export const inList = (listId: number, activities: Activity[]) =>
   activities.filter((a) => a.listId === listId);
+
+export const serveGoal = (activities: Activity[], goalId: number) =>
+  activities.filter((a) => (a.goalIds || []).includes(goalId));
