@@ -5,5 +5,4 @@ export * as Delta from "./delta";
 export * as List from "./list";
 export * as Activity from "./activity";
 export * as Date from "./date";
-export const wait = (ms: number) =>
-  new Promise((resolve) => setTimeout(resolve, ms));
+export * as Misc from "./misc";
