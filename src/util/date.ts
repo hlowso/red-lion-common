@@ -45,4 +45,6 @@ export const isCron = (str: string) => {
 };
 
 export const daysUntil = (date: Date) =>
-  Math.ceil((date.getTime() - new Date().getTime()) / (24 * 60 * 60 * 1000));
+  Math.ceil(
+    (localDate(date).getTime() - new Date().getTime()) / (24 * 60 * 60 * 1000)
+  );

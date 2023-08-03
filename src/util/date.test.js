@@ -1,5 +1,5 @@
 const { describe, expect, test } = require("@jest/globals");
-const { isLate, isCron } = require("./date");
+const { isLate, isCron, daysUntil } = require("./date");
 
 describe("Util - Date", () => {
   describe("isLate", () => {
@@ -29,6 +29,13 @@ describe("Util - Date", () => {
     });
     test("returns true on 'mondays wednesdays fridays'", () => {
       expect(isCron("0 0 * * 1,2,3")).toBe(true);
+    });
+  });
+
+  describe("daysUntil", () => {
+    test("returns 1 for tomorrow", () => {
+      const tomorrow = new Date(new Date().getTime() + 1000 * 60 * 60 * 24);
+      expect(daysUntil(tomorrow)).toBe(1);
     });
   });
 });
