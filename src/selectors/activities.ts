@@ -27,3 +27,9 @@ export const inList = (listId: number, activities: Activity[]) =>
 
 export const serveGoal = (activities: Activity[], goalId: number) =>
   activities.filter((a) => (a.goalIds || []).includes(goalId));
+
+export const toAbstainFrom = (activities: Activity[]) =>
+  activities.filter((a) => !!a.abstinenceDelta);
+
+export const toComplete = (activities: Activity[]) =>
+  activities.filter((a) => !a.abstinenceDelta);
