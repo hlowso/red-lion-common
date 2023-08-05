@@ -1,5 +1,5 @@
 const { describe, expect, test } = require("@jest/globals");
-const { dueToday } = require("./activity");
+const { dueToday, sort } = require("./activity");
 
 describe("Util - Activity", () => {
   describe("dueToday", () => {
@@ -13,6 +13,13 @@ describe("Util - Activity", () => {
 
     test("correctly indicates an activity with no schedule is not due today", () => {
       expect(dueToday({ schedule: undefined })).toBe(false);
+    });
+  });
+
+  describe("sort", () => {
+    test("activities with positions prioritized", () => {
+      const A = [{ id: 1, position: 3 }, { id: 2 }, { id: 3, position: 1 }];
+      expect(A.sort(sort).map((a) => a.id)).toStrictEqual([3, 1, 2]);
     });
   });
 });

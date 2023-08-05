@@ -22,3 +22,12 @@ export const dueToday = (activity?: ActivityRow) => {
     return isToday(new Date(activity.schedule));
   }
 };
+
+export const sort = (a: ActivityRow, b: ActivityRow) => {
+  if (Number.isInteger(a.position) && Number.isInteger(b.position))
+    return a.position - b.position;
+  if (Number.isInteger(a.position)) return -1;
+  if (Number.isInteger(b.position)) return 1;
+
+  return a.id - b.id;
+};

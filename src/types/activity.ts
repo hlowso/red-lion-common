@@ -16,6 +16,7 @@ export interface ActivityRow {
   id: number;
   listId: number;
   name: string;
+  position?: number;
   description?: string;
   schedule?: string;
   count: number;
