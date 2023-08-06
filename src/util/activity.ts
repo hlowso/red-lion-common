@@ -23,11 +23,9 @@ export const dueToday = (activity?: ActivityRow) => {
   }
 };
 
-export const sort = (a: ActivityRow, b: ActivityRow) => {
-  if (Number.isInteger(a.position) && Number.isInteger(b.position))
-    return a.position - b.position;
-  if (Number.isInteger(a.position)) return -1;
-  if (Number.isInteger(b.position)) return 1;
-
-  return a.id - b.id;
+export const sort = (order: string) => (a: Activity, b: Activity) => {
+  const ids = order.split(",").map(Number);
+  return (
+    ids.findIndex((id) => id === a.id) - ids.findIndex((id) => id === b.id)
+  );
 };
