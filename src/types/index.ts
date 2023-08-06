@@ -12,6 +12,7 @@ export * from "./subscription";
 export * from "./character-tally-target";
 export * from "./goal";
 export * from "./character-goal";
+export * from "./character-list";
 export * from "./goal-activity";
 export * from "./delta";
 export * from "./formula";
