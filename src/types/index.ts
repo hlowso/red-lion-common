@@ -17,3 +17,4 @@ export * from "./goal-activity";
 export * from "./delta";
 export * from "./formula";
 export * from "./web-socket-payloads";
+export * from "./resource";
