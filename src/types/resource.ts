@@ -1,1 +1,1 @@
-export type EditableResource = "list";
+export type EditableResource = "list" | "goal";
