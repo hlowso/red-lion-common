@@ -1,1 +1,1 @@
-export type EditableResource = "list" | "goal";
+export type EditableResource = "list" | "characterGoal";

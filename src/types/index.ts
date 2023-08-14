@@ -16,5 +16,6 @@ export * from "./character-list";
 export * from "./goal-activity";
 export * from "./delta";
 export * from "./formula";
+export * from "./utility";
 export * from "./web-socket-payloads";
 export * from "./resource";
