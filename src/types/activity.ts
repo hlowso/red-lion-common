@@ -42,3 +42,10 @@ export interface ActivityLogObjectRow {
   activityId: number;
   logId: number;
 }
+
+export interface ActivityStreak {
+  activityId: number;
+  activityName: string;
+  streak: number;
+  antistreak: boolean;
+}
