@@ -14,6 +14,8 @@ export * from "./goal";
 export * from "./character-goal";
 export * from "./character-list";
 export * from "./goal-activity";
+export * from "./journal";
+export * from "./journal-entry";
 export * from "./delta";
 export * from "./formula";
 export * from "./utility";
