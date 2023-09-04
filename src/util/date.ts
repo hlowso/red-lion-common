@@ -48,3 +48,12 @@ export const daysUntil = (date: Date) =>
   Math.ceil(
     (localDate(date).getTime() - new Date().getTime()) / (24 * 60 * 60 * 1000)
   );
+
+export const duration = (ms: number) => {
+  const hours = Math.floor(ms / (1000 * 60 * 60));
+  const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((ms % (1000 * 60)) / 1000);
+  const format = (n: number) => (n < 10 ? `0${n}` : String(n));
+
+  return `${format(hours)}:${format(minutes)}:${format(seconds)}`;
+};
