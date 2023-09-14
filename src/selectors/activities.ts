@@ -33,3 +33,6 @@ export const toAbstainFrom = (activities: Activity[]) =>
 
 export const toComplete = (activities: Activity[]) =>
   activities.filter((a) => !a.abstinenceDelta);
+
+export const withIdIn = (activities: Activity[], ids: number[]) =>
+  activities.filter((a) => ids.includes(a.id));
