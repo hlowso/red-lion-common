@@ -5,8 +5,7 @@ export interface CommitmentRow {
   activityIds: string;
 }
 
-export interface Commitment
-  extends Partial<Omit<CommitmentRow, "activityIds">> {
+export interface Commitment extends Omit<CommitmentRow, "activityIds"> {
   activityIds: number[];
   committed: boolean;
 }
