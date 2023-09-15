@@ -55,3 +55,6 @@ export const duration = (ms: number) => {
 
 export const hoursBefore = (n: number, time = new Date()) =>
   new Date(time.getTime() - 1000 * 60 * 60 * n);
+
+export const between = (start: Date, date: Date, end: Date) =>
+  start.getTime() <= date.getTime() && date.getTime() < end.getTime();
