@@ -4,15 +4,12 @@ export const isValid = (d: Date): d is Date =>
   d instanceof Date && !isNaN(d.getTime());
 
 export const sameDate = (d1: Date, d2: Date) => {
-  const l1 = localDate(d1);
-  const l2 = localDate(d2);
-
   return (
-    isValid(l1) &&
-    isValid(l2) &&
-    l1.getUTCDate() === l2.getUTCDate() &&
-    l1.getUTCMonth() === l2.getUTCMonth() &&
-    l1.getUTCFullYear() === l2.getUTCFullYear()
+    isValid(d1) &&
+    isValid(d2) &&
+    d1.getDate() === d2.getDate() &&
+    d1.getMonth() === d2.getMonth() &&
+    d1.getFullYear() === d2.getFullYear()
   );
 };
 
@@ -45,9 +42,7 @@ export const isCron = (str: string) => {
 };
 
 export const daysUntil = (date: Date) =>
-  Math.ceil(
-    (localDate(date).getTime() - new Date().getTime()) / (24 * 60 * 60 * 1000)
-  );
+  Math.ceil((date.getTime() - new Date().getTime()) / (24 * 60 * 60 * 1000));
 
 export const duration = (ms: number) => {
   const hours = Math.floor(ms / (1000 * 60 * 60));
@@ -57,3 +52,6 @@ export const duration = (ms: number) => {
 
   return `${format(hours)}:${format(minutes)}:${format(seconds)}`;
 };
+
+export const hoursBefore = (n: number, time = new Date()) =>
+  new Date(time.getTime() - 1000 * 60 * 60 * n);
