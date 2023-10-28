@@ -1,4 +1,4 @@
-# RED LION COMMON
+# Red Lion Common
 
 - Types
 - Utility functions
